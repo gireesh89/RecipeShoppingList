@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12">
             <app-receipes *ngIf="selectedFeature === 'recipe' else shopping"></app-receipes>
-            <ng-template #shopping><app-shoppinglist></app-shoppinglist></ng-template>
+            <ng-template #shopping><app-shoppinglist (ingredientSelected)="viewSelectedIng($event)"></app-shoppinglist></ng-template>
             
         </div>
     </div>
