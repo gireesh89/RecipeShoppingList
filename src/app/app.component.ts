@@ -6,10 +6,6 @@ import { Component, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {    
-  selectedFeature:string;
-  featureSelected(feature:string){
-    this.selectedFeature=feature;
-  }
+export class AppComponent {      
   
 }
