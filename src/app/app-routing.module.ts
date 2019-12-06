@@ -4,7 +4,6 @@ import { ShoppinglistComponent } from './shoppinglist/shoppinglist.component';
 import { NgModule } from '@angular/core';
 import { RecipedetailsComponent } from './recipes/recipedetails/recipedetails.component';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipeResolver } from './recipes/recipe-resolver.service';
 import { EditrecipesComponent } from './recipes/editrecipes/editrecipes.component';
 
 const appRoutes: Route[] = [
