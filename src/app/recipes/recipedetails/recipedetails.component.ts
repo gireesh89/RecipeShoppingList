@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
-import { ActivatedRoute, Params,Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
 @Component({
@@ -10,21 +10,25 @@ import { ActivatedRoute, Params,Router } from '@angular/router';
   styleUrls: ['./recipedetails.component.css']
 })
 export class RecipedetailsComponent implements OnInit {
-  recipeDetails:Recipe;
-  constructor(private recipeService:RecipeService,private actroute:ActivatedRoute,private route:Router) { }
+  recipeDetails: Recipe;
+  constructor(private recipeService: RecipeService, private actroute: ActivatedRoute, private route: Router) { }
 
-  ngOnInit() { 
-      this.actroute.params.subscribe(
-        (params:Params) =>{
-          this.recipeDetails=this.recipeService.getRecipe(+params['id'])
-        }
-      )
+  ngOnInit() {
+    this.actroute.params.subscribe(
+      (params: Params) => {
+        this.recipeDetails = this.recipeService.getRecipe(+params['id']);
+      }
+    )
   }
-  addToShopping(){   
+  addToShopping() {
     this.recipeService.addIngredentsToShopList(this.recipeDetails.ingredients);
   }
-  editRecipe(){
-  this.route.navigate(['edit'],{relativeTo:this.actroute,queryParamsHandling:'preserve'})
+  editRecipe() {
+    this.route.navigate(['edit'], { relativeTo: this.actroute, queryParamsHandling: 'preserve' });
+  }
+  deleteRecipe(){
+    this.recipeService.deleteRecipe(+this.actroute.params['id']);
+    this.route.navigate(['../'], {relativeTo: this.actroute});
   }
 
 }

@@ -13,7 +13,7 @@ const appRoutes: Route[] = [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: EditrecipesComponent },
       { path: ':id', component: RecipedetailsComponent },
-      { path:':id/edit', component:EditrecipesComponent  }
+      { path: ':id/edit', component: EditrecipesComponent  }
     ]
   },
 
