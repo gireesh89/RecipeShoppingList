@@ -21,6 +21,6 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'ng build'
+    customCommand: 'build'
   displayName: 'npm build'
 
