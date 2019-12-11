@@ -22,4 +22,5 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'ng build'
+  displayName: 'npm build'
 
